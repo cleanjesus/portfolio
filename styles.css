@@ -1,0 +1,483 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Update base font */
+body {
+  font-family: "Courier New", monospace;
+  line-height: 1.6;
+  color: #333;
+  background-color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Hero name styling */
+.hero-content h1 {
+  color: var(--accent-color);
+  font-size: 5.5rem;
+  font-weight: 1000;
+  /* Remove font-stretch as it won't help with vertical stretch */
+  letter-spacing: -2.5px;
+  margin-bottom: 1.5rem;
+  /* Add vertical stretch using transform */
+  transform: scaleY(1.2);
+  /* Adjust the origin of the transformation */
+  transform-origin: center;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+/* Adjust other headings for monospace */
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Navigation styling */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 107, 53, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Dark mode adjustment for header */
+@media (prefers-color-scheme: dark) {
+  header {
+    background-color: rgba(255, 107, 53, 0.15);
+  }
+}
+
+/* Adjust main content to prevent overlap with fixed header */
+body {
+  padding-top: 5rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  list-style: none;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+:root {
+  --accent-color: #ff6b35;
+  --accent-hover: #ff8659;
+  --bg-color: #ffffff;
+  --text-color: #333;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --card-hover: rgba(255, 107, 53, 0.05);
+  --secondary-text: #666;
+  --border-radius: 12px;
+  --small-radius: 8px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #000;
+}
+
+/* Navigation hover effect */
+nav ul li a {
+  position: relative;
+  color: #333;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Hero section */
+.hero {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  background: none;
+  padding: 0;
+}
+
+/* Add or update these styles */
+:root {
+  --border-radius: 12px;
+  --small-radius: 8px;
+}
+
+section {
+  border-radius: var(--border-radius);
+  padding: 4rem 2rem;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  margin: 0.5rem 0;
+  transition: all 0.3s ease;
+  background-color: var(--card-bg);
+}
+
+.project-card:hover {
+  background-color: rgba(255, 107, 53, 0.15);
+  transform: translateY(-5px);
+}
+
+.education-item {
+  border-radius: var(--small-radius);
+  padding: 1.5rem;
+  background-color: rgba(255, 107, 53, 0.05);
+}
+
+.hero-content {
+  border-radius: var(--border-radius);
+}
+
+.profile-pic {
+  border-radius: var(--border-radius);
+}
+
+.social-links a {
+  padding: 0.5rem 1rem;
+  border-radius: var(--small-radius);
+  background-color: rgba(255, 107, 53, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: rgba(255, 107, 53, 0.15);
+}
+
+nav ul li a {
+  padding: 0.5rem 1rem;
+  border-radius: var(--small-radius);
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 107, 53, 0.1);
+}
+
+img {
+  border-radius: var(--border-radius);
+}
+
+button,
+input,
+textarea {
+  border-radius: var(--small-radius);
+}
+
+/* Contact section */
+.contact-content {
+  text-align: left;
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: #666;
+  text-decoration: none;
+  margin-right: 2rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #000;
+}
+
+/* Add this to the head of your HTML file */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+/* Add these new styles for fade effect */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero section updates */
+.hero-content h1 {
+  color: var(--accent-color);
+}
+
+/* Scroll animation */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.17, 0.85, 0.438, 0.99);
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Project cards hover effect */
+/* Projects section spacing */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  padding: 1rem;
+}
+
+.project-card {
+  border-left: 3px solid transparent;
+  padding: 2rem;
+  margin: 0.5rem 0;
+  transition: all 0.3s ease;
+  /* Move this to the top of your file, right after the reset styles */
+  :root {
+    --accent-color: #ff6b35;
+    --accent-hover: #ff8659;
+    --bg-color: #ffffff;
+    --text-color: #333;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --card-hover: rgba(255, 107, 53, 0.05);
+    --secondary-text: #666;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-color: #1a1a1a;
+      --text-color: #f5f5f5;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --card-hover: rgba(255, 107, 53, 0.15);
+      --secondary-text: #aaa;
+    }
+  }
+
+  /* Update the body styles */
+  body {
+    font-family: "Courier New", monospace;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    padding-top: 5rem;
+  }
+
+  /* Remove the duplicate color definitions from .project-card */
+  .project-card {
+    border-left: 3px solid transparent;
+    padding: 2rem;
+    margin: 0.5rem 0;
+    transition: all 0.3s ease;
+    background-color: var(--card-bg);
+  }
+
+  .project-card:hover {
+    background-color: var(--card-hover);
+  }
+
+  /* Update navigation links */
+  nav ul li a {
+    color: var(--text-color);
+  }
+
+  /* Update education items */
+  .education-item {
+    background-color: var(--card-bg);
+  }
+
+  /* Update social links */
+  .social-links a {
+    color: var(--secondary-text);
+  }
+
+  /* Update footer */
+  footer {
+    background-color: var(--card-bg);
+  }
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.project-card:hover {
+  border-left-color: var(--accent-color);
+  background-color: rgba(255, 107, 53, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.project-card h3 {
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.project-card p {
+  line-height: 1.8;
+}
+
+/* Links and buttons */
+.social-links a {
+  color: var(--accent-color);
+}
+
+.social-links a:hover {
+  color: var(--accent-hover);
+}
+
+h2 {
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+}
+/* Footer styling */
+/* Footer Section Start */
+footer {
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  border-top: 1px solid var(--accent-color);
+  background-color: var(--card-bg);
+}
+
+footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-info {
+  margin-bottom: 1.5rem;
+}
+
+.contact-info h3 {
+  font-size: 1.1rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  font-size: 0.85rem;
+  color: var(--secondary-text);
+  margin-bottom: 0.5rem;
+}
+
+.contact-info a {
+  color: var(--secondary-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: var(--accent-color);
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: var(--secondary-text);
+  margin-top: 1rem;
+}
+
+footer .social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+footer .social-links a {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  color: var(--secondary-text);
+  transition: all 0.3s ease;
+  border-radius: var(--small-radius);
+  background-color: var(--card-hover);
+}
+
+footer .social-links a:hover {
+  color: var(--bg-color);
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  footer .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  footer .social-links {
+    justify-content: center;
+  }
+}
+
+.video-container {
+  display: flex; /* Always show the video container */
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem; /* Add margin to create space above the video */
+}
+
+.video-container video {
+  width: 100%; /* Make the video take the full width of the container */
+  max-width: 300px; /* Set a maximum width for the video */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 12px; /* Add rounded edges */
+}
+
+.arrow-icon {
+  display: block; /* Always show the arrow icon */
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.tab-line-icon {
+  display: block; /* Always show the tab line icon */
+  font-size: 2rem; /* Adjust size as needed */
+  margin-top: 1rem; /* Space between video and tab line */
+  color: var(--accent-color); /* Use accent color for the line */
+  text-align: center; /* Center the line */
+}
